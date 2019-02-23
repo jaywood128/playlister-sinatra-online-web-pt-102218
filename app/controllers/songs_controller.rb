@@ -8,8 +8,8 @@ class SongsController < ApplicationController
   end
 
   get '/songs/:slug' do
-
     @song = Song.find_by_slug(params["slug"])
+    @song.artist.save
 
     erb :'songs/show'
 
